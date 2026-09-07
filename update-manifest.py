@@ -12,6 +12,8 @@ from pathlib import Path
 
 AUDIO_EXTS = {".wav", ".mp3", ".ogg", ".flac", ".aiff", ".aif", ".m4a"}
 ROOT = Path(__file__).resolve().parent
+# Trailing slash matters: Strudel concatenates _base + path verbatim.
+BASE = "https://raw.githubusercontent.com/JacksonMeade/turncoat-samples/main/"
 
 banks = {}
 for folder in sorted(ROOT.iterdir()):
@@ -24,7 +26,7 @@ for folder in sorted(ROOT.iterdir()):
     )
     banks[folder.name] = files
 
-manifest = {"_base": ""}
+manifest = {"_base": BASE}
 manifest.update(banks)
 
 out = ROOT / "strudel.json"

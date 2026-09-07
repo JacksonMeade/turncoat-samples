@@ -1,5 +1,5 @@
 {
-  "_base": "",
+  "_base": "https://raw.githubusercontent.com/JacksonMeade/turncoat-samples/main/",
   "misc": [],
   "vocals": [
     "vocals/exorcist-01.wav"

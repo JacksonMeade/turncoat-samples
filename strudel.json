@@ -1,4 +1,7 @@
 {
   "_base": "",
-  "misc": []
+  "misc": [],
+  "vocals": [
+    "vocals/exorcist-01.wav"
+  ]
 }

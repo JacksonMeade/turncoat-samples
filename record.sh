@@ -16,7 +16,7 @@ RAW=$(mktemp --suffix=.wav)
 trap 'rm -f "$RAW"' EXIT
 
 echo "Recording ${SECS}s from output monitor — play now..."
-timeout "$SECS" pw-record --target "$TARGET" --rate 48000 --channels 2 "$RAW" || true
+ffmpeg -hide_banner -loglevel error -y -f pulse -i "$TARGET" -t "$SECS" "$RAW"
 
 mkdir -p "$DIR/$BANK"
 OUT="$DIR/$BANK/$NAME.wav"
